@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Chapter 01. 실습 환경 사전 세팅"
-categories: [session]
+categories: [aitouragenthon]
 tags: [copilot-studio, sharepoint, setup]
 summary: "Copilot Studio 접속과 SharePoint 실습 환경을 준비합니다."
 ---
@@ -18,7 +18,7 @@ summary: "Copilot Studio 접속과 SharePoint 실습 환경을 준비합니다."
 
 ## Copilot Studio 접속
 
-![Copilot Studio Login](/images/posts/2026-02-12-chapter-01-setup/00-copilotstudio-login.png)
+![Copilot Studio Login]({{ "/images/posts/2026-02-12-chapter-01-setup/00-copilotstudio-login.png" | relative_url }})
 
 브라우저에서 아래 주소로 이동해 로그인합니다.  
 
@@ -30,7 +30,7 @@ https://copilotstudio.microsoft.com
 
 ## SharePoint 접속
 
-![Open SharePoint](/images/posts/2026-02-12-chapter-01-setup/01-open-sharepoint.png)
+![Open SharePoint]({{ "/images/posts/2026-02-12-chapter-01-setup/01-open-sharepoint.png" | relative_url }})
 
 Microsoft 365 화면 왼쪽 상단의 앱 런처를 클릭한 뒤,  
 **SharePoint**를 선택해 접속합니다.
@@ -41,7 +41,7 @@ Microsoft 365 화면 왼쪽 상단의 앱 런처를 클릭한 뒤,
 
 ### 새 사이트 만들기
 
-![Create Site](/images/posts/2026-02-12-chapter-01-setup/02-create-site.png)
+![Create Site]({{ "/images/posts/2026-02-12-chapter-01-setup/02-create-site.png" | relative_url }})
 
 SharePoint 화면 왼쪽 상단의  
 **+ 사이트 만들기** 버튼을 선택합니다.
@@ -50,7 +50,7 @@ SharePoint 화면 왼쪽 상단의
 
 ### 팀 사이트 선택
 
-![Team Site](/images/posts/2026-02-12-chapter-01-setup/03-team-site.png)
+![Team Site]({{ "/images/posts/2026-02-12-chapter-01-setup/03-team-site.png" | relative_url }})
 
 사이트 유형으로 **팀 사이트**를 선택합니다.  
 실습에서는 **IT 지원 센터** 템플릿을 사용합니다.
@@ -59,7 +59,7 @@ SharePoint 화면 왼쪽 상단의
 
 ### 사이트 정보 입력
 
-![Site Info](/images/posts/2026-02-12-chapter-01-setup/04-site-info.png)
+![Site Info]({{ "/images/posts/2026-02-12-chapter-01-setup/04-site-info.png" | relative_url }})
 
 다음 정보를 입력합니다.
 
@@ -72,7 +72,7 @@ SharePoint 화면 왼쪽 상단의
 
 ## 생성된 Site 확인
 
-![Site Created](/images/posts/2026-02-12-chapter-01-setup/05-site-created.png)
+![Site Created]({{ "/images/posts/2026-02-12-chapter-01-setup/05-site-created.png" | relative_url }})
 
 이제 실습에서 사용할 SharePoint Site가 준비되었습니다.
 

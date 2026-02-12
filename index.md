@@ -17,25 +17,31 @@ Copilot Studio로 Agent를 만들고, 테스트하고, 배포하는 흐름을 �
 
 ---
 
-## 글 목록
+## 주제별 글
 
-{% assign posts = site.posts | sort: "date" | reverse %}
-<div class="post-grid">
-{% for post in posts %}
-	<article class="post-card">
-		<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-		<div class="post-meta">{{ post.date | date: "%Y-%m-%d" }} · {{ post.categories | join: ", " }}</div>
-		<p>{{ post.summary | default: post.excerpt | strip_html | truncate: 140 }}</p>
-		{% if post.tags %}
-		<div class="post-tags">
-			{% for tag in post.tags %}
-				<span class="post-tag">#{{ tag }}</span>
-			{% endfor %}
-		</div>
-		{% endif %}
-	</article>
+{% assign ordered = site.category_order %}
+{% for cat in ordered %}
+	{% assign cat_posts = site.categories[cat] %}
+	{% if cat_posts %}
+	<h3>{{ site.category_labels[cat] | default: cat }}</h3>
+	<div class="post-grid">
+		{% for post in cat_posts %}
+			<article class="post-card">
+				<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+				<div class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</div>
+				<p>{{ post.summary | default: post.excerpt | strip_html | truncate: 140 }}</p>
+				{% if post.tags %}
+				<div class="post-tags">
+					{% for tag in post.tags %}
+						<span class="post-tag">#{{ tag }}</span>
+					{% endfor %}
+				</div>
+				{% endif %}
+			</article>
+		{% endfor %}
+	</div>
+	{% endif %}
 {% endfor %}
-</div>
 
 ---
 

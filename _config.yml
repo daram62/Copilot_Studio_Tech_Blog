@@ -1,4 +1,10 @@
-title: "Session Docs"
+title: "Tech Blog"
 markdown: kramdown
 
 theme: minima
+
+category_order:
+	- aitouragenthon
+
+category_labels:
+	aitouragenthon: "AITourAgenthon"
