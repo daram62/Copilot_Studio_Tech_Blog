@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --text: #1f2430;
+        --muted: #5c6773;
+        --bg: #f7f8fb;
+        --card: #ffffff;
+        --accent: #2563eb;
+        --accent-soft: #e7efff;
+        --border: #e6e9ef;
+        --shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+      }
+      :root[data-theme="dark"] {
+          --text: #e6eaf2;
+          --muted: #a6b0c0;
+          --bg: #0f141c;
+          --card: #151c28;
+          --accent: #60a5fa;
+          --accent-soft: #1c2a44;
+          --border: #222c3d;
+          --shadow: 0 12px 28px rgba(15, 20, 28, 0.6);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) {
+          --text: #e6eaf2;
+          --muted: #a6b0c0;
+          --bg: #0f141c;
+          --card: #151c28;
+          --accent: #60a5fa;
+          --accent-soft: #1c2a44;
+          --border: #222c3d;
+          --shadow: 0 12px 28px rgba(15, 20, 28, 0.6);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(900px 300px at 20% -10%, rgba(37, 99, 235, 0.12), transparent 60%),
+          radial-gradient(700px 260px at 90% 0%, rgba(96, 165, 250, 0.18), transparent 55%),
+          var(--bg);
+      }
+      header {
+        border-bottom: 1px solid var(--border);
+        background: color-mix(in srgb, var(--card) 92%, transparent);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .wrap { max-width: 1040px; margin: 0 auto; padding: 22px 24px; }
+      .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .brand {
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--text);
+        letter-spacing: -0.02em;
+      }
+      .theme-toggle {
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .layout { display: grid; grid-template-columns: 220px 1fr; gap: 22px; }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .toc strong {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 12px;
+      }
+      .toc a {
+        display: block;
+        margin: 8px 0;
+        color: var(--text);
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+      }
+      .toc a.active {
+        color: var(--accent);
+        font-weight: 700;
+        background: var(--accent-soft);
+      }
+      .post-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        margin: 16px 0 24px;
+      }
+      .post-card {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        background: color-mix(in srgb, var(--card) 94%, transparent);
+      }
+      .post-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.05rem;
+      }
+      .post-meta {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .post-tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+      main {
+        line-height: 1.75;
+        font-size: 1.02rem;
+      }
+      main img { max-width: 100%; border-radius: 10px; border: 1px solid var(--border); }
+      main h1, main h2, main h3 {
+        margin-top: 1.6em;
+        letter-spacing: -0.02em;
+      }
+      main h1 { font-size: 2rem; }
+      main h2 { font-size: 1.45rem; }
+      main h3 { font-size: 1.2rem; }
+      main blockquote {
+        border-left: 4px solid var(--accent);
+        margin: 18px 0;
+        padding: 4px 14px;
+        color: var(--muted);
+        background: color-mix(in srgb, var(--accent-soft) 60%, transparent);
+        border-radius: 8px;
+      }
+      main hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+      main a { color: var(--accent); text-decoration: none; }
+      main a:hover { text-decoration: underline; }
+      footer { color: var(--muted); font-size: 0.9rem; padding: 24px 0 48px; }
+      @media (max-width: 860px) {
+        .layout { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap topbar">
+        <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <div class="wrap layout">
+      {% assign posts = site.posts | sort: 'date' | reverse %}
+
+      <aside class="card toc">
+        <strong>Posts</strong>
+        {% if posts %}
+          {% for post in posts %}
+            <a href="{{ post.url | relative_url }}" class="{% if page.url == post.url %}active{% endif %}">{{ post.title }}</a>
+          {% endfor %}
+        {% else %}
+          <p>No posts yet.</p>
+        {% endif %}
+      </aside>
+
+      <main class="card">
+        {{ content }}
+      </main>
+    </div>
+
+    <div class="wrap">
+      <footer>Built with GitHub Pages + Jekyll</footer>
+    </div>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var toggle = document.getElementById("themeToggle");
+        if (!toggle) return;
+
+        function applyTheme(theme) {
+          if (theme === "light" || theme === "dark") {
+            root.setAttribute("data-theme", theme);
+          } else {
+            root.removeAttribute("data-theme");
+          }
+          var isDark = root.getAttribute("data-theme") === "dark";
+          toggle.textContent = isDark ? "☀️" : "🌙";
+        }
+
+        var stored = localStorage.getItem("theme");
+        applyTheme(stored);
+
+        toggle.addEventListener("click", function () {
+          var current = root.getAttribute("data-theme");
+          var next = current === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          localStorage.setItem("theme", next);
+          applyTheme(next);
+        });
+      })();
+    </script>
+  </body>
+</html>

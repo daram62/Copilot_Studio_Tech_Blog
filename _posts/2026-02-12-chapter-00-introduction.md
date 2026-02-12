@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Chapter 00. AI Agent란 무엇인가?"
+categories: [session]
+tags: [agent, llm, rag]
+summary: "Agent, LLM, Hallucination, RAG 핵심 개념을 빠르게 정리합니다."
+---
+
 # Chapter 00. AI Agent란 무엇인가?
 
 > Copilot Studio로 Agent를 직접 만들어보기 전에,  
@@ -7,7 +15,7 @@
 
 ## 🤖 Agent란?
 
-![Agent Concept](./images/ch00/00-agent-overview.png)
+![Agent Concept](/images/posts/2026-02-12-chapter-00-introduction/00-agent-overview.png)
 
 **Agent**란,
 특정 **Task(업무)** 를 수행하도록 설계된 인공지능입니다.
@@ -26,7 +34,7 @@
 
 ## 🧠 LLM (Large Language Model)
 
-![LLM](./images/ch00/01-llm.png)
+![LLM](/images/posts/2026-02-12-chapter-00-introduction/01-llm.png)
 
 **LLM**은 Agent의 **두뇌 역할**을 합니다.
 
@@ -40,7 +48,7 @@
 
 ## ⚠️ Hallucination (환각 현상)
 
-![Hallucination](./images/ch00/02-hallucination.png)
+![Hallucination](/images/posts/2026-02-12-chapter-00-introduction/02-hallucination.png)
 
 **Hallucination**이란,
 AI가 **그럴듯하지만 사실이 아닌 정보**를 생성하는 현상입니다.
@@ -55,7 +63,7 @@ AI가 **그럴듯하지만 사실이 아닌 정보**를 생성하는 현상입�
 
 ## 📚 RAG (Retrieval-Augmented Generation)
 
-![RAG Flow](./images/ch00/03-rag-flow.png)
+![RAG Flow](/images/posts/2026-02-12-chapter-00-introduction/03-rag-flow.png)
 
 **RAG**는 Hallucination을 해결하기 위한 대표적인 방법입니다.
 
@@ -76,7 +84,7 @@ AI가 **그럴듯하지만 사실이 아닌 정보**를 생성하는 현상입�
 
 ## 🧩 Agent 구조 한눈에 보기
 
-![Agent Architecture](./images/ch00/04-agent-architecture.png)
+![Agent Architecture](/images/posts/2026-02-12-chapter-00-introduction/04-agent-architecture.png)
 
 Agent는 보통 다음 요소들로 구성됩니다.
 

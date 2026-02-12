@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Chapter 03. Custom Agent 만들기"
+categories: [session]
+tags: [copilot-studio, custom-agent, knowledge]
+summary: "자연어 프롬프트와 Knowledge를 활용해 Custom Agent를 설계합니다."
+---
+
 # Chapter 03. Custom Agent 만들기
 
 이 챕터에서는 Copilot Studio에서  
@@ -11,7 +19,7 @@ Custom Agent는 목적과 동작을 사용자가 직접 정의하는
 
 ## Custom Agent란?
 
-![Custom Agent](./images/ch03/00-custom-agent.png)
+![Custom Agent](/images/posts/2026-02-12-chapter-03-custom-agent/00-custom-agent.png)
 
 Custom Agent는  
 질문에 답하는 것을 넘어,  
@@ -41,7 +49,7 @@ Custom Agent를 통해 다음을 직접 설계할 수 있습니다.
 
 ## 1. 자연어로 Agent 생성하기
 
-![Natural Language Agent](./images/ch03/01-nl-agent.png)
+![Natural Language Agent](/images/posts/2026-02-12-chapter-03-custom-agent/01-nl-agent.png)
 
 Copilot Studio에 접속한 뒤,  
 Agent 생성 과정에서 **자연어 프롬프트**를 입력합니다.
@@ -60,7 +68,7 @@ Agent의 기본 설정을 자동으로 구성합니다.
 
 ## 2. 참조 자료(Knowledge) 추가
 
-![Add Knowledge](./images/ch03/02-add-knowledge.png)
+![Add Knowledge](/images/posts/2026-02-12-chapter-03-custom-agent/02-add-knowledge.png)
 
 Custom Agent가 정확한 답변을 제공하도록,  
 참조 자료를 추가합니다.
@@ -69,7 +77,7 @@ Copilot Studio에서는 다음과 같은 자료를 연결할 수 있습니다.
 
 ### 공개 웹 사이트
 
-![Add Web Source](./images/ch03/03-add-web.png)
+![Add Web Source](/images/posts/2026-02-12-chapter-03-custom-agent/03-add-web.png)
 
 예시:
 - https://support.microsoft.com
@@ -81,7 +89,7 @@ Agent는 해당 사이트의 정보를 참고해
 
 ### SharePoint Site 연결
 
-![Add SharePoint](./images/ch03/04-add-sharepoint.png)
+![Add SharePoint](/images/posts/2026-02-12-chapter-03-custom-agent/04-add-sharepoint.png)
 
 사전에 생성한 SharePoint Site를  
 Agent의 Knowledge Source로 연결합니다.
@@ -89,23 +97,25 @@ Agent의 Knowledge Source로 연결합니다.
 이를 통해 Agent는  
 조직 내부 문서를 기반으로 답변할 수 있습니다.
 
+- [Custom Agent 프롬프트.txt](/files/posts/2026-02-12-chapter-03-custom-agent/Custom%20Agent%20프롬프트.txt)
+
 ---
 
 ### 파일 업로드
 
-![Add File](./images/ch03/05-add-file.png)
+![Add File](/images/posts/2026-02-12-chapter-03-custom-agent/05-add-file.png)
 
 문서 파일을 직접 업로드해  
 Agent의 참조 자료로 사용할 수 있습니다.
 
 예:
-- Company_Wifi_Guide.docx
+- [Agenthon_Wifi_Guide.docx](/files/posts/2026-02-12-chapter-03-custom-agent/Agenthon_Wifi_Guide.docx)
 
 ---
 
 ## 3. 에이전트 게시
 
-![Publish Agent](./images/ch03/06-publish.png)
+![Publish Agent](/images/posts/2026-02-12-chapter-03-custom-agent/06-publish.png)
 
 설정이 완료되면,  
 **게시** 버튼을 선택해 에이전트를 배포합니다.
@@ -117,12 +127,12 @@ Copilot 환경에서 실제로 사용할 수 있습니다.
 
 ## 4. 에이전트 테스트 및 확인
 
-![Test Agent](./images/ch03/07-test-agent.png)
+![Test Agent](/images/posts/2026-02-12-chapter-03-custom-agent/07-test-agent.png)
 
 테스트 패널을 통해  
 에이전트의 동작을 직접 확인합니다.
 
-![M365 Copilot](./images/ch03/08-m365-copilot.png)
+![M365 Copilot](/images/posts/2026-02-12-chapter-03-custom-agent/08-m365-copilot.png)
 
 또한 게시된 에이전트는  
 Microsoft 365 Copilot에서도 확인할 수 있습니다.
